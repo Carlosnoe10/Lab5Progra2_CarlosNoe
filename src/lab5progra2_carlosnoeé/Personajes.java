@@ -88,7 +88,15 @@ public class Personajes {
 
     @Override
     public String toString() {
-        return "Personajes{" + "Nombre=" + Nombre + ", Poder=" + Poder + ", Debilidad=" + Debilidad + ", UniversoDeP=" + UniversoDeP + ", Fuerza=" + Fuerza + ", AFisica=" + AFisica + ", AMental=" + AMental + ", PuntosDVida=" + PuntosDVida + '}';
+        return "Personajes\n"
+                + "Nombre -> " + Nombre + "\n"
+                + " Poder -> " + Poder + "\n"
+                + " Debilidad -> " + Debilidad + "\n"
+                + "Universo De Pertenencia ->" + UniversoDeP + "\n"
+                + "Fuerza -> " + Fuerza + "\n"
+                + "Agilidad Fisica -> " + AFisica + "\n"
+                + "Agilidad Mental -> " + AMental + "\n"
+                + "Puntos De Vida ->" + PuntosDVida;
     }
 
 
