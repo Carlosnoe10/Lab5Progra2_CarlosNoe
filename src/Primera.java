@@ -26,18 +26,6 @@ public class Primera extends javax.swing.JFrame {
     private void initComponents() {
 
         MenuPrincipal = new javax.swing.JFrame();
-        Base1 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        label2 = new java.awt.Label();
-        AgregarPJs2 = new java.awt.Button();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        AgregarPJs3 = new java.awt.Button();
-        ListarPJs1 = new java.awt.Label();
-        jPanel8 = new javax.swing.JPanel();
-        SimuladorPJs1 = new java.awt.Button();
-        label4 = new java.awt.Label();
         AgregarPJ = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -58,8 +46,211 @@ public class Primera extends javax.swing.JFrame {
         VIda = new javax.swing.JTextField();
         Universo = new java.awt.Choice();
         Agregar = new java.awt.Button();
-        jFrame1 = new javax.swing.JFrame();
+        ListadoPersonajes = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        POPMenu = new javax.swing.JTree();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ListaMostrarToString = new javax.swing.JList<>();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        Batalla = new javax.swing.JFrame();
+        jPanel3 = new javax.swing.JPanel();
+        Universo1 = new java.awt.Choice();
+        Universo2 = new java.awt.Choice();
+        textField1 = new java.awt.TextField();
+        textField2 = new java.awt.TextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        JugadasJugador2 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        JugadasJugador1 = new javax.swing.JTextArea();
+        Comenzar = new java.awt.Button();
+        Base1 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        label2 = new java.awt.Label();
+        AgregarPJs2 = new java.awt.Button();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        AgregarPJs3 = new java.awt.Button();
+        ListarPJs1 = new java.awt.Label();
+        jPanel8 = new javax.swing.JPanel();
+        SimuladorPJs1 = new java.awt.Button();
+        label4 = new java.awt.Label();
+
+        javax.swing.GroupLayout MenuPrincipalLayout = new javax.swing.GroupLayout(MenuPrincipal.getContentPane());
+        MenuPrincipal.getContentPane().setLayout(MenuPrincipalLayout);
+        MenuPrincipalLayout.setHorizontalGroup(
+            MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+        );
+        MenuPrincipalLayout.setVerticalGroup(
+            MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 850, Short.MAX_VALUE)
+        );
+
+        jPanel1.setBackground(new java.awt.Color(51, 255, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Agregar Personajes");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, -1, -1));
+
+        label1.setText("Agregar Nombre");
+        jPanel1.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 120, 40));
+        jPanel1.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 310, 20));
+
+        label3.setText("Agregar Poder");
+        jPanel1.add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 120, 40));
+
+        Poder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PoderActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Poder, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 310, 20));
+
+        label6.setText("Agregar Debilidad");
+        jPanel1.add(label6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 120, 40));
+
+        Debilidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DebilidadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Debilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 310, 20));
+
+        label5.setText("Agregar Universo de Pertenencia");
+        jPanel1.add(label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 200, 40));
+
+        label8.setText("Agregar Fuerza");
+        jPanel1.add(label8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 40, 120, 40));
+        jPanel1.add(Fuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 310, 20));
+
+        label7.setText("Agreagr Agilidad Fisica");
+        jPanel1.add(label7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 140, 40));
+
+        Fisica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FisicaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Fisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, 310, 20));
+
+        label10.setText("Agregar Agilidad Mental");
+        jPanel1.add(label10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 40, 130, 40));
+        jPanel1.add(Mental, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 80, 310, 20));
+
+        label9.setText("Agregar Puntos de vida");
+        jPanel1.add(label9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 100, 130, 40));
+
+        VIda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VIdaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VIda, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 140, 310, 20));
+        jPanel1.add(Universo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 310, -1));
+
+        Agregar.setBackground(new java.awt.Color(0, 0, 0));
+        Agregar.setForeground(new java.awt.Color(255, 255, 255));
+        Agregar.setLabel("Listo!");
+        jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 1430, 40));
+
+        javax.swing.GroupLayout AgregarPJLayout = new javax.swing.GroupLayout(AgregarPJ.getContentPane());
+        AgregarPJ.getContentPane().setLayout(AgregarPJLayout);
+        AgregarPJLayout.setHorizontalGroup(
+            AgregarPJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        AgregarPJLayout.setVerticalGroup(
+            AgregarPJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+        );
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane1.setViewportView(POPMenu);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 320, -1));
+
+        ListaMostrarToString.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(ListaMostrarToString);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(903, 250, 210, 260));
+
+        jTextField1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jTextField1.setText("Listado Personajes");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 300, 40));
+
+        jTextField2.setText("jTextField1");
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 90, 300, 40));
+
+        javax.swing.GroupLayout ListadoPersonajesLayout = new javax.swing.GroupLayout(ListadoPersonajes.getContentPane());
+        ListadoPersonajes.getContentPane().setLayout(ListadoPersonajesLayout);
+        ListadoPersonajesLayout.setHorizontalGroup(
+            ListadoPersonajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ListadoPersonajesLayout.setVerticalGroup(
+            ListadoPersonajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.add(Universo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 310, 20));
+        jPanel3.add(Universo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 310, -1));
+
+        textField1.setText("Jugador 2");
+        textField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(textField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 240, -1));
+
+        textField2.setText("Jugador 1");
+        jPanel3.add(textField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 240, -1));
+
+        JugadasJugador2.setColumns(20);
+        JugadasJugador2.setRows(5);
+        jScrollPane3.setViewportView(JugadasJugador2);
+
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 340, 300));
+
+        JugadasJugador1.setColumns(20);
+        JugadasJugador1.setRows(5);
+        jScrollPane4.setViewportView(JugadasJugador1);
+
+        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 340, 300));
+
+        Comenzar.setLabel("BATALLA");
+        jPanel3.add(Comenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 1048, 55));
+
+        javax.swing.GroupLayout BatallaLayout = new javax.swing.GroupLayout(Batalla.getContentPane());
+        Batalla.getContentPane().setLayout(BatallaLayout);
+        BatallaLayout.setHorizontalGroup(
+            BatallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        BatallaLayout.setVerticalGroup(
+            BatallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BatallaLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 65, Short.MAX_VALUE))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Base1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -72,6 +263,11 @@ public class Primera extends javax.swing.JFrame {
 
         AgregarPJs2.setBackground(new java.awt.Color(153, 0, 0));
         AgregarPJs2.setLabel("Comenzar");
+        AgregarPJs2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AgregarPJs2MouseClicked(evt);
+            }
+        });
         AgregarPJs2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarPJs2ActionPerformed(evt);
@@ -196,131 +392,25 @@ public class Primera extends javax.swing.JFrame {
 
         Base1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 850));
 
-        javax.swing.GroupLayout MenuPrincipalLayout = new javax.swing.GroupLayout(MenuPrincipal.getContentPane());
-        MenuPrincipal.getContentPane().setLayout(MenuPrincipalLayout);
-        MenuPrincipalLayout.setHorizontalGroup(
-            MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(MenuPrincipalLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(Base1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        MenuPrincipalLayout.setVerticalGroup(
-            MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(MenuPrincipalLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(Base1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        jPanel1.setBackground(new java.awt.Color(51, 255, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Perpetua Titling MT", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Agregar Personajes");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, -1, -1));
-
-        label1.setText("Agregar Nombre");
-        jPanel1.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 120, 40));
-        jPanel1.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 310, 20));
-
-        label3.setText("Agregar Poder");
-        jPanel1.add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 120, 40));
-
-        Poder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PoderActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Poder, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 310, 20));
-
-        label6.setText("Agregar Debilidad");
-        jPanel1.add(label6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 120, 40));
-
-        Debilidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DebilidadActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Debilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 310, 20));
-
-        label5.setText("Agregar Universo de Pertenencia");
-        jPanel1.add(label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 200, 40));
-
-        label8.setText("Agregar Fuerza");
-        jPanel1.add(label8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 40, 120, 40));
-        jPanel1.add(Fuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 310, 20));
-
-        label7.setText("Agreagr Agilidad Fisica");
-        jPanel1.add(label7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 100, 140, 40));
-
-        Fisica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FisicaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Fisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, 310, 20));
-
-        label10.setText("Agregar Agilidad Mental");
-        jPanel1.add(label10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 40, 130, 40));
-        jPanel1.add(Mental, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 80, 310, 20));
-
-        label9.setText("Agregar Puntos de vida");
-        jPanel1.add(label9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 100, 130, 40));
-
-        VIda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VIdaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(VIda, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 140, 310, 20));
-        jPanel1.add(Universo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 310, -1));
-
-        Agregar.setBackground(new java.awt.Color(0, 0, 0));
-        Agregar.setForeground(new java.awt.Color(255, 255, 255));
-        Agregar.setLabel("Listo!");
-        jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 1430, 40));
-
-        javax.swing.GroupLayout AgregarPJLayout = new javax.swing.GroupLayout(AgregarPJ.getContentPane());
-        AgregarPJ.getContentPane().setLayout(AgregarPJLayout);
-        AgregarPJLayout.setHorizontalGroup(
-            AgregarPJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        AgregarPJLayout.setVerticalGroup(
-            AgregarPJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
-        );
-
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Base1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 874, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Base1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -345,6 +435,20 @@ public class Primera extends javax.swing.JFrame {
     private void DebilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DebilidadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DebilidadActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField1ActionPerformed
+
+    private void AgregarPJs2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarPJs2MouseClicked
+       new Primera().setVisible(false);
+       
+       
+    }//GEN-LAST:event_AgregarPJs2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -387,26 +491,41 @@ public class Primera extends javax.swing.JFrame {
     private java.awt.Button AgregarPJs2;
     private java.awt.Button AgregarPJs3;
     private javax.swing.JPanel Base1;
+    private javax.swing.JFrame Batalla;
+    private java.awt.Button Comenzar;
     private javax.swing.JTextField Debilidad;
     private javax.swing.JTextField Fisica;
     private javax.swing.JTextField Fuerza;
+    private javax.swing.JTextArea JugadasJugador1;
+    private javax.swing.JTextArea JugadasJugador2;
+    private javax.swing.JList<String> ListaMostrarToString;
+    private javax.swing.JFrame ListadoPersonajes;
     private java.awt.Label ListarPJs1;
     private javax.swing.JTextField Mental;
     private javax.swing.JFrame MenuPrincipal;
     private javax.swing.JTextField Nombre;
+    private javax.swing.JTree POPMenu;
     private javax.swing.JTextField Poder;
     private java.awt.Button SimuladorPJs1;
     private java.awt.Choice Universo;
+    private java.awt.Choice Universo1;
+    private java.awt.Choice Universo2;
     private javax.swing.JTextField VIda;
-    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private java.awt.Label label1;
     private java.awt.Label label10;
     private java.awt.Label label2;
@@ -417,5 +536,7 @@ public class Primera extends javax.swing.JFrame {
     private java.awt.Label label7;
     private java.awt.Label label8;
     private java.awt.Label label9;
+    private java.awt.TextField textField1;
+    private java.awt.TextField textField2;
     // End of variables declaration//GEN-END:variables
 }
