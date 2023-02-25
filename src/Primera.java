@@ -1,3 +1,9 @@
+
+import java.util.ArrayList;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -9,9 +15,7 @@
  */
 public class Primera extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Primera
-     */
+ArrayList <Personajes> Personas= new ArrayList();
     public Primera() {
         initComponents();
     }
@@ -25,7 +29,6 @@ public class Primera extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        MenuPrincipal = new javax.swing.JFrame();
         AgregarPJ = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -46,14 +49,18 @@ public class Primera extends javax.swing.JFrame {
         VIda = new javax.swing.JTextField();
         Universo = new java.awt.Choice();
         Agregar = new java.awt.Button();
+        button1 = new java.awt.Button();
         ListadoPersonajes = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        POPMenu = new javax.swing.JTree();
         jScrollPane2 = new javax.swing.JScrollPane();
         ListaMostrarToString = new javax.swing.JList<>();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        DefaultMutableTreeNode Pers = new DefaultMutableTreeNode("Personajes");
+        DefaultTreeModel modelo = new DefaultTreeModel(Pers);
+        DefaultMutableTreeNode ql= (DefaultMutableTreeNode) Pers.getRoot();
+        Arbolitoqlo = new JTree(modelo);
         Batalla = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
         Universo1 = new java.awt.Choice();
@@ -65,6 +72,7 @@ public class Primera extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         JugadasJugador1 = new javax.swing.JTextArea();
         Comenzar = new java.awt.Button();
+        MOD = new javax.swing.JFrame();
         Base1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -78,17 +86,6 @@ public class Primera extends javax.swing.JFrame {
         SimuladorPJs1 = new java.awt.Button();
         label4 = new java.awt.Label();
 
-        javax.swing.GroupLayout MenuPrincipalLayout = new javax.swing.GroupLayout(MenuPrincipal.getContentPane());
-        MenuPrincipal.getContentPane().setLayout(MenuPrincipalLayout);
-        MenuPrincipalLayout.setHorizontalGroup(
-            MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-        );
-        MenuPrincipalLayout.setVerticalGroup(
-            MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 850, Short.MAX_VALUE)
-        );
-
         jPanel1.setBackground(new java.awt.Color(51, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -99,6 +96,12 @@ public class Primera extends javax.swing.JFrame {
 
         label1.setText("Agregar Nombre");
         jPanel1.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 120, 40));
+
+        Nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreActionPerformed(evt);
+            }
+        });
         jPanel1.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 310, 20));
 
         label3.setText("Agregar Poder");
@@ -156,7 +159,15 @@ public class Primera extends javax.swing.JFrame {
         Agregar.setBackground(new java.awt.Color(0, 0, 0));
         Agregar.setForeground(new java.awt.Color(255, 255, 255));
         Agregar.setLabel("Listo!");
+        Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarActionPerformed(evt);
+            }
+        });
         jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 1430, 40));
+
+        button1.setLabel("Mod");
+        jPanel1.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1297, 0, 130, -1));
 
         javax.swing.GroupLayout AgregarPJLayout = new javax.swing.GroupLayout(AgregarPJ.getContentPane());
         AgregarPJ.getContentPane().setLayout(AgregarPJLayout);
@@ -171,10 +182,6 @@ public class Primera extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane1.setViewportView(POPMenu);
-
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 320, -1));
-
         ListaMostrarToString.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -182,7 +189,7 @@ public class Primera extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(ListaMostrarToString);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(903, 250, 210, 260));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 180, 210, 260));
 
         jTextField1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jTextField1.setText("Listado Personajes");
@@ -194,247 +201,278 @@ public class Primera extends javax.swing.JFrame {
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 300, 40));
 
         jTextField2.setText("jTextField1");
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 90, 300, 40));
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 60, 300, 40));
 
-        javax.swing.GroupLayout ListadoPersonajesLayout = new javax.swing.GroupLayout(ListadoPersonajes.getContentPane());
-        ListadoPersonajes.getContentPane().setLayout(ListadoPersonajesLayout);
-        ListadoPersonajesLayout.setHorizontalGroup(
-            ListadoPersonajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        ListadoPersonajesLayout.setVerticalGroup(
-            ListadoPersonajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel3.add(Universo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 310, 20));
-        jPanel3.add(Universo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 310, -1));
-
-        textField1.setText("Jugador 2");
-        textField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField1ActionPerformed(evt);
+        DefaultMutableTreeNode DC = (DefaultMutableTreeNode) ql.getRoot();
+        DefaultMutableTreeNode Marvel = (DefaultMutableTreeNode) ql.getRoot();
+        DefaultMutableTreeNode Capcom = (DefaultMutableTreeNode) ql.getRoot();
+        DefaultMutableTreeNode MK = (DefaultMutableTreeNode) ql.getRoot();
+        Pers.add(DC);
+        Pers.add(Marvel);
+        Pers.add(Capcom);
+        Pers.add(MK);
+        for (int i = 0; i < Personas.size(); i++) {
+            if (Personas.get(i).getUniversoDeP().equalsIgnoreCase("DC")){
+                DC.setUserObject(Personas.get(i).getNombre());
+            }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase("MK")){
+                MK.setUserObject(Personas.get(i).getNombre());
+            }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase("Marvel")){
+                Marvel.setUserObject(Personas.get(i).getNombre());
+            }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase("Capcom")){
+                Capcom.setUserObject(Personas.get(i).getNombre());
             }
-        });
-        jPanel3.add(textField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 240, -1));
+            Arbolitoqlo.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    ArbolitoqloMouseClicked(evt);
+                }
+            });
+            jScrollPane5.setViewportView(Arbolitoqlo);
 
-        textField2.setText("Jugador 1");
-        jPanel3.add(textField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 240, -1));
+            jPanel2.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 390, -1));
 
-        JugadasJugador2.setColumns(20);
-        JugadasJugador2.setRows(5);
-        jScrollPane3.setViewportView(JugadasJugador2);
+            javax.swing.GroupLayout ListadoPersonajesLayout = new javax.swing.GroupLayout(ListadoPersonajes.getContentPane());
+            ListadoPersonajes.getContentPane().setLayout(ListadoPersonajesLayout);
+            ListadoPersonajesLayout.setHorizontalGroup(
+                ListadoPersonajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListadoPersonajesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+            ListadoPersonajesLayout.setVerticalGroup(
+                ListadoPersonajesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+            );
 
-        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 340, 300));
+            jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            jPanel3.add(Universo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 310, 20));
+            jPanel3.add(Universo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 310, -1));
 
-        JugadasJugador1.setColumns(20);
-        JugadasJugador1.setRows(5);
-        jScrollPane4.setViewportView(JugadasJugador1);
+            textField1.setText("Jugador 2");
+            textField1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    textField1ActionPerformed(evt);
+                }
+            });
+            jPanel3.add(textField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 240, -1));
 
-        jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 340, 300));
+            textField2.setText("Jugador 1");
+            jPanel3.add(textField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 240, -1));
 
-        Comenzar.setLabel("BATALLA");
-        jPanel3.add(Comenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 1048, 55));
+            JugadasJugador2.setColumns(20);
+            JugadasJugador2.setRows(5);
+            jScrollPane3.setViewportView(JugadasJugador2);
 
-        javax.swing.GroupLayout BatallaLayout = new javax.swing.GroupLayout(Batalla.getContentPane());
-        Batalla.getContentPane().setLayout(BatallaLayout);
-        BatallaLayout.setHorizontalGroup(
-            BatallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        BatallaLayout.setVerticalGroup(
-            BatallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BatallaLayout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 65, Short.MAX_VALUE))
-        );
+            jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 340, 300));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+            JugadasJugador1.setColumns(20);
+            JugadasJugador1.setRows(5);
+            jScrollPane4.setViewportView(JugadasJugador1);
 
-        Base1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            jPanel3.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 340, 300));
 
-        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel6.setForeground(new java.awt.Color(0, 0, 0));
+            Comenzar.setLabel("BATALLA");
+            jPanel3.add(Comenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 1048, 55));
 
-        label2.setAlignment(java.awt.Label.CENTER);
-        label2.setForeground(new java.awt.Color(255, 255, 255));
-        label2.setText("Agregar Personaje");
+            javax.swing.GroupLayout BatallaLayout = new javax.swing.GroupLayout(Batalla.getContentPane());
+            Batalla.getContentPane().setLayout(BatallaLayout);
+            BatallaLayout.setHorizontalGroup(
+                BatallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            );
+            BatallaLayout.setVerticalGroup(
+                BatallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BatallaLayout.createSequentialGroup()
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 65, Short.MAX_VALUE))
+            );
 
-        AgregarPJs2.setBackground(new java.awt.Color(153, 0, 0));
-        AgregarPJs2.setLabel("Comenzar");
-        AgregarPJs2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AgregarPJs2MouseClicked(evt);
-            }
-        });
-        AgregarPJs2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarPJs2ActionPerformed(evt);
-            }
-        });
+            javax.swing.GroupLayout MODLayout = new javax.swing.GroupLayout(MOD.getContentPane());
+            MOD.getContentPane().setLayout(MODLayout);
+            MODLayout.setHorizontalGroup(
+                MODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 1340, Short.MAX_VALUE)
+            );
+            MODLayout.setVerticalGroup(
+                MODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 436, Short.MAX_VALUE)
+            );
 
-        jLabel2.setText("Menu");
+            setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(AgregarPJs2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(AgregarPJs2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
-        );
+            Base1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+            jPanel6.setBackground(new java.awt.Color(0, 0, 0));
+            jPanel6.setForeground(new java.awt.Color(0, 0, 0));
 
-        AgregarPJs3.setBackground(new java.awt.Color(0, 0, 0));
-        AgregarPJs3.setForeground(new java.awt.Color(255, 255, 255));
-        AgregarPJs3.setLabel("Comenzar");
+            label2.setAlignment(java.awt.Label.CENTER);
+            label2.setForeground(new java.awt.Color(255, 255, 255));
+            label2.setText("Agregar Personaje");
 
-        ListarPJs1.setAlignment(java.awt.Label.CENTER);
-        ListarPJs1.setForeground(new java.awt.Color(0, 0, 0));
-        ListarPJs1.setText("Listar Personajes");
+            AgregarPJs2.setBackground(new java.awt.Color(153, 0, 0));
+            AgregarPJs2.setLabel("Comenzar");
+            AgregarPJs2.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    AgregarPJs2MouseClicked(evt);
+                }
+            });
+            AgregarPJs2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    AgregarPJs2ActionPerformed(evt);
+                }
+            });
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(ListarPJs1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(AgregarPJs3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(ListarPJs1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(AgregarPJs3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
-        );
+            jLabel2.setText("Menu");
 
-        jPanel8.setBackground(new java.awt.Color(204, 0, 51));
+            javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+            jPanel6.setLayout(jPanel6Layout);
+            jPanel6Layout.setHorizontalGroup(
+                jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addGap(79, 79, 79)
+                            .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addGap(146, 146, 146)
+                            .addComponent(AgregarPJs2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addGap(204, 204, 204)
+                            .addComponent(jLabel2)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+            jPanel6Layout.setVerticalGroup(
+                jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(43, 43, 43)
+                    .addComponent(AgregarPJs2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(47, 47, 47))
+            );
 
-        SimuladorPJs1.setBackground(new java.awt.Color(255, 255, 255));
-        SimuladorPJs1.setLabel("Comenzar");
+            jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        label4.setAlignment(java.awt.Label.CENTER);
-        label4.setForeground(new java.awt.Color(0, 0, 0));
-        label4.setText("Listar Personajes");
+            AgregarPJs3.setBackground(new java.awt.Color(0, 0, 0));
+            AgregarPJs3.setForeground(new java.awt.Color(255, 255, 255));
+            AgregarPJs3.setLabel("Comenzar");
+            AgregarPJs3.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    AgregarPJs3MouseClicked(evt);
+                }
+            });
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(SimuladorPJs1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(SimuladorPJs1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
-        );
+            ListarPJs1.setAlignment(java.awt.Label.CENTER);
+            ListarPJs1.setForeground(new java.awt.Color(0, 0, 0));
+            ListarPJs1.setText("Listar Personajes");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+            javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+            jPanel7.setLayout(jPanel7Layout);
+            jPanel7Layout.setHorizontalGroup(
+                jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(79, 79, 79)
+                            .addComponent(ListarPJs1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(146, 146, 146)
+                            .addComponent(AgregarPJs3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(87, Short.MAX_VALUE))
+            );
+            jPanel7Layout.setVerticalGroup(
+                jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGap(42, 42, 42)
+                    .addComponent(ListarPJs1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                    .addComponent(AgregarPJs3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(76, 76, 76))
+            );
 
-        Base1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 850));
+            jPanel8.setBackground(new java.awt.Color(204, 0, 51));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(Base1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(Base1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+            SimuladorPJs1.setBackground(new java.awt.Color(255, 255, 255));
+            SimuladorPJs1.setLabel("Comenzar");
+            SimuladorPJs1.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    SimuladorPJs1MouseClicked(evt);
+                }
+            });
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+            label4.setAlignment(java.awt.Label.CENTER);
+            label4.setForeground(new java.awt.Color(0, 0, 0));
+            label4.setText("Batalla");
 
-    private void AgregarPJs2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarPJs2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AgregarPJs2ActionPerformed
+            javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+            jPanel8.setLayout(jPanel8Layout);
+            jPanel8Layout.setHorizontalGroup(
+                jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                            .addGap(79, 79, 79)
+                            .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                            .addGap(146, 146, 146)
+                            .addComponent(SimuladorPJs1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(87, Short.MAX_VALUE))
+            );
+            jPanel8Layout.setVerticalGroup(
+                jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addGap(42, 42, 42)
+                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                    .addComponent(SimuladorPJs1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(76, 76, 76))
+            );
 
-    private void PoderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PoderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PoderActionPerformed
+            javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+            jPanel5.setLayout(jPanel5Layout);
+            jPanel5Layout.setHorizontalGroup(
+                jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            );
+            jPanel5Layout.setVerticalGroup(
+                jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
 
-    private void FisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FisicaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FisicaActionPerformed
+            Base1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 850));
 
-    private void VIdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VIdaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_VIdaActionPerformed
+            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+            getContentPane().setLayout(layout);
+            layout.setHorizontalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Base1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+            );
+            layout.setVerticalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Base1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+            );
 
-    private void DebilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DebilidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DebilidadActionPerformed
+            pack();
+        }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -444,11 +482,66 @@ public class Primera extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textField1ActionPerformed
 
+    private void VIdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VIdaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VIdaActionPerformed
+
+    private void FisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FisicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FisicaActionPerformed
+
+    private void DebilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DebilidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DebilidadActionPerformed
+
+    private void PoderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PoderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PoderActionPerformed
+
+    private void AgregarPJs2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarPJs2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AgregarPJs2ActionPerformed
+
     private void AgregarPJs2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarPJs2MouseClicked
-       new Primera().setVisible(false);
-       
-       
+        AgregarPJ.setVisible(true);
+        AgregarPJ.setSize(1430, 243);
+        Base1.setVisible(false);
     }//GEN-LAST:event_AgregarPJs2MouseClicked
+
+    private void AgregarPJs3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarPJs3MouseClicked
+        ListadoPersonajes.setVisible(true);
+        ListadoPersonajes.setSize(1200, 500);
+        Base1.setVisible(false);
+    }//GEN-LAST:event_AgregarPJs3MouseClicked
+
+    private void SimuladorPJs1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SimuladorPJs1MouseClicked
+        Batalla.setVisible(true);
+        Batalla.setSize(1068, 555);
+        Base1.setVisible(false);
+    }//GEN-LAST:event_SimuladorPJs1MouseClicked
+
+    private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreActionPerformed
+
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
+        String nombre1, poder, debilidad, Uni;
+        double fuerza, AgilFis, AgilMen, PuntosV;
+        nombre1 = Nombre.getText();
+        poder = Poder.getText();
+        debilidad = Debilidad.getText();
+        Uni= Debilidad.getText();
+        fuerza = Double.parseDouble(Fuerza.getText());
+        AgilFis= Double.parseDouble(Fisica.getText());
+        AgilMen= Double.parseDouble(Mental.getText());
+        PuntosV= Double.parseDouble(VIda.getText());
+        Personajes pers = new Personajes(nombre1, poder, debilidad, Uni, fuerza, AgilFis, AgilMen, PuntosV);
+        
+    }//GEN-LAST:event_AgregarActionPerformed
+
+    private void ArbolitoqloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ArbolitoqloMouseClicked
+
+    }//GEN-LAST:event_ArbolitoqloMouseClicked
 
     /**
      * @param args the command line arguments
@@ -481,6 +574,7 @@ public class Primera extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Primera().setVisible(true);
+
             }
         });
     }
@@ -490,6 +584,7 @@ public class Primera extends javax.swing.JFrame {
     private javax.swing.JFrame AgregarPJ;
     private java.awt.Button AgregarPJs2;
     private java.awt.Button AgregarPJs3;
+    private javax.swing.JTree Arbolitoqlo;
     private javax.swing.JPanel Base1;
     private javax.swing.JFrame Batalla;
     private java.awt.Button Comenzar;
@@ -501,16 +596,16 @@ public class Primera extends javax.swing.JFrame {
     private javax.swing.JList<String> ListaMostrarToString;
     private javax.swing.JFrame ListadoPersonajes;
     private java.awt.Label ListarPJs1;
+    private javax.swing.JFrame MOD;
     private javax.swing.JTextField Mental;
-    private javax.swing.JFrame MenuPrincipal;
     private javax.swing.JTextField Nombre;
-    private javax.swing.JTree POPMenu;
     private javax.swing.JTextField Poder;
     private java.awt.Button SimuladorPJs1;
     private java.awt.Choice Universo;
     private java.awt.Choice Universo1;
     private java.awt.Choice Universo2;
     private javax.swing.JTextField VIda;
+    private java.awt.Button button1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -520,10 +615,10 @@ public class Primera extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private java.awt.Label label1;

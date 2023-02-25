@@ -1,4 +1,4 @@
-package lab5progra2_carlosnoeé;
+
 
 
 public class Personajes {

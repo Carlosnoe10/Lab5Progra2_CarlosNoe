@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JFrame" name="MenuPrincipal">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="450" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="850" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
     <Container class="javax.swing.JFrame" name="AgregarPJ">
 
       <Layout>
@@ -70,6 +55,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="Nombre">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NombreActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="40" y="80" width="310" height="20"/>
@@ -217,9 +205,22 @@
                 </Property>
                 <Property name="label" type="java.lang.String" value="Listo!"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgregarActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="0" y="190" width="1430" height="40"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="java.awt.Button" name="button1">
+              <Properties>
+                <Property name="label" type="java.lang.String" value="Mod"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="1297" y="0" width="130" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -232,12 +233,16 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel2" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+              <Component id="jPanel2" alignment="0" pref="510" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -248,29 +253,13 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="160" y="180" width="320" height="-1"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTree" name="POPMenu">
-                </Component>
-              </SubComponents>
-            </Container>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="903" y="250" width="210" height="260"/>
+                  <AbsoluteConstraints x="890" y="180" width="210" height="260"/>
                 </Constraint>
               </Constraints>
 
@@ -316,10 +305,34 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="900" y="90" width="300" height="40"/>
+                  <AbsoluteConstraints x="790" y="60" width="300" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="120" y="130" width="390" height="-1"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTree" name="Arbolitoqlo">
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ArbolitoqloMouseClicked"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JTree(modelo)"/>
+                    <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultMutableTreeNode Pers = new DefaultMutableTreeNode(&quot;Personajes&quot;);&#xa;        DefaultTreeModel modelo = new DefaultTreeModel(Pers);&#xa;        DefaultMutableTreeNode ql= (DefaultMutableTreeNode) Pers.getRoot();"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultMutableTreeNode DC = (DefaultMutableTreeNode) ql.getRoot();&#xa;    DefaultMutableTreeNode Marvel = (DefaultMutableTreeNode) ql.getRoot();&#xa;    DefaultMutableTreeNode Capcom = (DefaultMutableTreeNode) ql.getRoot();&#xa;DefaultMutableTreeNode MK = (DefaultMutableTreeNode) ql.getRoot();&#xa;Pers.add(DC);&#xa;Pers.add(Marvel);&#xa;Pers.add(Capcom);&#xa;Pers.add(MK);&#xa;        for (int i = 0; i &lt; Personas.size(); i++) {&#xa;            if (Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;DC&quot;)){&#xa;            DC.setUserObject(Personas.get(i).getNombre());&#xa;                }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;MK&quot;)){&#xa;                MK.setUserObject(Personas.get(i).getNombre());&#xa;                }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;Marvel&quot;)){&#xa;                Marvel.setUserObject(Personas.get(i).getNombre());&#xa;                }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;Capcom&quot;)){&#xa;                Capcom.setUserObject(Personas.get(i).getNombre());&#xa;}"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
@@ -438,6 +451,21 @@
           </SubComponents>
         </Container>
       </SubComponents>
+    </Container>
+    <Container class="javax.swing.JFrame" name="MOD">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="1340" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="436" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
     </Container>
   </NonVisualComponents>
   <Properties>
@@ -643,6 +671,9 @@
                     </Property>
                     <Property name="label" type="java.lang.String" value="Comenzar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AgregarPJs3MouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="java.awt.Label" name="ListarPJs1">
                   <Properties>
@@ -700,6 +731,9 @@
                     </Property>
                     <Property name="label" type="java.lang.String" value="Comenzar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SimuladorPJs1MouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="java.awt.Label" name="label4">
                   <Properties>
@@ -707,7 +741,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Listar Personajes"/>
+                    <Property name="text" type="java.lang.String" value="Batalla"/>
                   </Properties>
                 </Component>
               </SubComponents>
