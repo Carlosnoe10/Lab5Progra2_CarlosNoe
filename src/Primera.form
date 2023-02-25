@@ -303,6 +303,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="jTextField1"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="790" y="60" width="300" height="40"/>
@@ -328,7 +331,7 @@
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JTree(modelo)"/>
                     <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultMutableTreeNode Pers = new DefaultMutableTreeNode(&quot;Personajes&quot;);&#xa;        DefaultTreeModel modelo = new DefaultTreeModel(Pers);&#xa;        DefaultMutableTreeNode ql= (DefaultMutableTreeNode) Pers.getRoot();"/>
-                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultMutableTreeNode DC = (DefaultMutableTreeNode) ql.getRoot();&#xa;    DefaultMutableTreeNode Marvel = (DefaultMutableTreeNode) ql.getRoot();&#xa;    DefaultMutableTreeNode Capcom = (DefaultMutableTreeNode) ql.getRoot();&#xa;DefaultMutableTreeNode MK = (DefaultMutableTreeNode) ql.getRoot();&#xa;Pers.add(DC);&#xa;Pers.add(Marvel);&#xa;Pers.add(Capcom);&#xa;Pers.add(MK);&#xa;        for (int i = 0; i &lt; Personas.size(); i++) {&#xa;            if (Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;DC&quot;)){&#xa;            DC.setUserObject(Personas.get(i).getNombre());&#xa;                }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;MK&quot;)){&#xa;                MK.setUserObject(Personas.get(i).getNombre());&#xa;                }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;Marvel&quot;)){&#xa;                Marvel.setUserObject(Personas.get(i).getNombre());&#xa;                }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;Capcom&quot;)){&#xa;                Capcom.setUserObject(Personas.get(i).getNombre());&#xa;}"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultMutableTreeNode DC = (DefaultMutableTreeNode) ql.getRoot();&#xa;    DefaultMutableTreeNode Marvel = (DefaultMutableTreeNode) ql.getRoot();&#xa;    DefaultMutableTreeNode Capcom = (DefaultMutableTreeNode) ql.getRoot();&#xa;DefaultMutableTreeNode MK = (DefaultMutableTreeNode) ql.getRoot();&#xa;ql.add(DC);&#xa;ql.add(Marvel);&#xa;ql.add(Capcom);&#xa;ql.add(MK);&#xa;        for (int i = 0; i &lt; Personas.size(); i++) {&#xa;            if (Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;DC&quot;)){&#xa;            DC.setUserObject(Personas.get(i).getNombre());&#xa;                }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;MK&quot;)){&#xa;                MK.setUserObject(Personas.get(i).getNombre());&#xa;                }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;Marvel&quot;)){&#xa;                Marvel.setUserObject(Personas.get(i).getNombre());&#xa;                }else if(Personas.get(i).getUniversoDeP().equalsIgnoreCase(&quot;Capcom&quot;)){&#xa;                Capcom.setUserObject(Personas.get(i).getNombre());&#xa;}&#xa;}"/>
                   </AuxValues>
                 </Component>
               </SubComponents>
